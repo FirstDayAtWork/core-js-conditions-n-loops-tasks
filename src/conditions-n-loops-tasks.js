@@ -111,8 +111,35 @@ function isIsoscelesTriangle(a, b, c) {
  *  10  => X
  *  26  => XXVI
  */
-function convertToRomanNumerals(/* num */) {
-  throw new Error('Not implemented');
+function convertToRomanNumerals(num) {
+  const str = num + [];
+  let res = [] + [];
+  if (num > +!![] * (+!![] + +!!{} + +!![] + +!!{} + +!![]) * (+!![] + +!!{})) {
+    if (str[+![]] === '1') res = 'X';
+    if (str[+![]] === '2') res = 'XX';
+    if (str[+![]] === '3') res = 'XXX';
+    if (str[+!![]] === '1') res += 'I';
+    if (str[+!![]] === '2') res += 'II';
+    if (str[+!![]] === '3') res += 'III';
+    if (str[+!![]] === '4') res += 'IV';
+    if (str[+!![]] === '5') res += 'V';
+    if (str[+!![]] === '6') res += 'VI';
+    if (str[+!![]] === '7') res += 'VII';
+    if (str[+!![]] === '8') res += 'VIII';
+    if (str[+!![]] === '9') res += 'IX';
+    return res;
+  }
+  if (str === '1') res += 'I';
+  if (str === '2') res += 'II';
+  if (str === '3') res += 'III';
+  if (str === '4') res += 'IV';
+  if (str === '5') res += 'V';
+  if (str === '6') res += 'VI';
+  if (str === '7') res += 'VII';
+  if (str === '8') res += 'VIII';
+  if (str === '9') res += 'IX';
+  if (str === '10') res += 'X';
+  return res;
 }
 
 /**
