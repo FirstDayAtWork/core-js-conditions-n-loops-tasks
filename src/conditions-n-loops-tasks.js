@@ -157,8 +157,61 @@ function convertToRomanNumerals(num) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let res = [] + [];
+  function handleSlice(str) {
+    let result = [] + [];
+    for (let k = +![]; k < str.length - +!!{}; k += +!![]) {
+      result += str[k];
+    }
+    return result;
+  }
+  for (let i = 0; i < numberStr.length; i += +!![]) {
+    switch (numberStr[i]) {
+      case '1':
+        res += 'one ';
+        break;
+      case '2':
+        res += 'two ';
+        break;
+      case '3':
+        res += 'three ';
+        break;
+      case '4':
+        res += 'four ';
+        break;
+      case '5':
+        res += 'five ';
+        break;
+      case '6':
+        res += 'six ';
+        break;
+      case '7':
+        res += 'seven ';
+        break;
+      case '8':
+        res += 'eight ';
+        break;
+      case '9':
+        res += 'nine ';
+        break;
+      case '0':
+        res += 'zero ';
+        break;
+      case '.':
+        res += 'point ';
+        break;
+      case ',':
+        res += 'point ';
+        break;
+      case '-':
+        res += 'minus ';
+        break;
+      default:
+        break;
+    }
+  }
+  return handleSlice(res);
 }
 
 /**
@@ -345,8 +398,24 @@ function sortByAsc(arr) {
  *  '012345', 3 => '024135' => '043215' => '031425'
  *  'qwerty', 3 => 'qetwry' => 'qtrewy' => 'qrwtey'
  */
-function shuffleChar(/* str, iterations */) {
-  throw new Error('Not implemented');
+function shuffleChar(str, iterations) {
+  let res = str;
+  function filter(string) {
+    let odd = [] + [];
+    let even = [] + [];
+    for (let i = +![]; i < string.length; i += +!!{}) {
+      if (i % (+!![] + +!!{}) !== +!{}) {
+        odd += string[i];
+      } else {
+        even += string[i];
+      }
+    }
+    return even + odd;
+  }
+  for (let i = +![]; i < iterations; i += +!!{}) {
+    res = filter(res);
+  }
+  return res;
 }
 
 /**
