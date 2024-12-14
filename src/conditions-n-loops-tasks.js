@@ -400,6 +400,9 @@ function sortByAsc(arr) {
  */
 function shuffleChar(str, iterations) {
   let res = str;
+  let copyIter = iterations;
+  let numOfIterToBackToInitValue = +!{};
+  const cash = new Map();
   function filter(string) {
     let odd = [] + [];
     let even = [] + [];
@@ -412,8 +415,14 @@ function shuffleChar(str, iterations) {
     }
     return even + odd;
   }
-  for (let i = +![]; i < iterations; i += +!!{}) {
+  for (let j = +![]; j < copyIter; j += +!!{}) {
     res = filter(res);
+    cash.set(j, res);
+    if (cash.get(j) === str) {
+      numOfIterToBackToInitValue = j;
+      copyIter = (iterations % (numOfIterToBackToInitValue + +!![])) - +!!{};
+      return cash.get(copyIter);
+    }
   }
   return res;
 }
