@@ -294,26 +294,26 @@ function isContainNumber(num, digit) {
  */
 function getBalanceIndex(arr) {
   const len = arr.length;
-  if (arr[0] === arr[len - 1]) {
-    return -1;
+  if (arr[0] === arr[len - +!![]]) {
+    return -!![];
   }
   function sumNums(array) {
-    let res = 0;
-    for (let k = 0; k < len; k += 1) {
+    let res = +!{};
+    for (let k = +!{}; k < len; k += +!![]) {
       res += array[k];
     }
     return res;
   }
   let rSide = sumNums(arr);
-  let lSide = 0;
-  for (let i = 0; i < len; i += 1) {
+  let lSide = +!{};
+  for (let i = +!{}; i < len; i += +!![]) {
     rSide -= arr[i];
     if (lSide === rSide) {
       return i;
     }
     lSide += arr[i];
   }
-  return -1;
+  return -!!{};
 }
 
 /**
@@ -337,8 +337,46 @@ function getBalanceIndex(arr) {
  *          [10, 9,  8,  7]
  *        ]
  */
-function getSpiralMatrix(/* size */) {
-  throw new Error('Not implemented');
+function getSpiralMatrix(size) {
+  const arr = [];
+  const total = size ** (+!![] + +!![]);
+  let count = total;
+  let circle = +!{};
+  let len = size;
+  for (let i = +!{}; i < size; i += +!![]) {
+    arr[i] = [];
+  }
+  while (len > +!{}) {
+    for (let i = +!{}; i < len; i += +!![]) {
+      if (i + circle < len) {
+        count -= +!![];
+        arr[circle][i + circle] = total - count;
+      }
+    }
+    for (let i = +!{}; i < len; i += +!![]) {
+      if (i + +!![] + circle < len) {
+        count -= +!![];
+        if (i + +!![] + circle < len) {
+          arr[i + +!![] + circle][len - +!![]] = total - count;
+        }
+      }
+    }
+    for (let i = +!{}; i < len; i += +!![]) {
+      if (len - (+!![] + +!![]) - i >= circle) {
+        count -= +!![];
+        arr[len - +!![]][len - (+!![] + +!![]) - i] = total - count;
+      }
+    }
+    for (let i = +!{}; i < len; i += +!![]) {
+      if (len - (+!![] + +!![]) - i >= circle + +!![]) {
+        count -= +!![];
+        arr[len - (+!![] + +!![]) - i][circle] = total - count;
+      }
+    }
+    circle += +!![];
+    len -= +!![];
+  }
+  return arr;
 }
 
 /**
