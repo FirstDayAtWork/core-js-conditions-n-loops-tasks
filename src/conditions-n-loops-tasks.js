@@ -502,8 +502,42 @@ function shuffleChar(str, iterations) {
  * @param {number} number The source number
  * @returns {number} The nearest larger number, or original number if none exists.
  */
-function getNearestBigger(/* number */) {
-  throw new Error('Not implemented');
+function getNearestBigger(number) {
+  function sliceIt(value, start, end) {
+    const isEnded = end || value.length;
+    const arr = [];
+    for (let i = start; i < isEnded; i += +!![]) {
+      arr.push(value[i]);
+    }
+    return arr;
+  }
+  function concatIt(value1, value2) {
+    const arr = value1;
+    for (let i = +!{}; i < value2.length; i += +!![]) {
+      arr.push(value2[i]);
+    }
+    return arr;
+  }
+  const str = `${number}`;
+  const arr = Array.from({ length: str.length }, (_, i) => str[i]);
+  let [array, slice1, slice2, slice3] = [];
+  for (let i = arr.length - +!![]; i > +!{}; i -= +!![]) {
+    if (arr[i - +!![]] < arr[i]) {
+      slice1 = sliceIt(arr, +!{}, i - +!![]);
+      slice2 = sliceIt(arr, i - +!![]);
+      break;
+    }
+  }
+  for (let j = slice2.length - +!![]; j > +!{}; j -= +!![]) {
+    if (slice2[+!{}] < slice2[j]) {
+      [slice2[+!{}], slice2[j]] = [slice2[j], slice2[+!{}]];
+      slice3 = sliceIt(slice2, +!![]).sort();
+      slice2 = sliceIt(slice2, +!{}, +!![]);
+      array = concatIt(slice1, concatIt(slice2, slice3));
+      return +array.join``;
+    }
+  }
+  return number;
 }
 
 module.exports = {
